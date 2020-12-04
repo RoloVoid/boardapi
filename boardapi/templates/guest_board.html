@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{url_for('static',filename ='guest_board.css')}}" />
+<title>guest_board</title>
+</head>
+<body>
+<div>
+    <input type="button" value="返回" style="float:right;" onclick="location.href='/'" />
+    <h1>留言板</h1>
+    <textarea id="commentArea" class="commentArea"></textarea>
+    <div>要留言请用<a href="session">账号登录</a></div>
+</div>
+<form>
+<ul class="board" id="UL">
+<li class="item" id="text" overflow="auto">
+     <div class="info" overflow="auto">
+         <div class="nickname">nickname</div>
+         <div class="date">date</div>
+         <fieldset class="text">text</fieldset>
+         <div class="last">last</div>
+     </div>
+</li>
+</ul>
+</form>
+</body>
+<script src={{ url_for('static', filename="guest_board.js")}}></script>
+</html>

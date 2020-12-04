@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static',filename ='person.css')}}" />
+<title>person</title>
+</head>
+<body>
+    <input type="button" value="注销" style="float:right;" onclick="logout()" />
+    <p id="username" style="display:none;"></p>
+    <div>
+        <div id="username0">用户名:</div>
+        <div id="nickname">昵称:</div>
+        <div id="age">年龄:</div>
+        <div id="gender">性别:</div>
+    </div>
+    <div>
+    <form>
+        <fieldset>
+        <legend>修改</legend>
+        <table>
+            <tr>
+                <td>昵称</td>
+                <td><input type="text" id="nickname1" /></td>
+            </tr>
+            <tr>
+                <td>年龄</td>
+                <td><input type="text" id="age1" /></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <select id=“gender1”>
+                        <option value="保密" selected="selected">请选择</option>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                        <option value="保密">保密</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" id="password1" /></td>
+            </tr>
+        </table>
+        <label id="change"><input type="button" onclick="change()" value="修改" /></label>
+        </fieldset>
+    </form>
+    <div id="alert"></div>
+    </div>
+</body>
+<script src={{ url_for('static', filename="person.js")}} ></script>
+</html>

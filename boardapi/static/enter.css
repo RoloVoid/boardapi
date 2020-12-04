@@ -1,0 +1,15 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    font-size: 5vw;
+  }
+input{
+    font-size: 5vw;
+}
+.info{
+    width: 25vw;
+}
+body{
+    text-align: center;
+    background-color:AliceBlue;
+}
