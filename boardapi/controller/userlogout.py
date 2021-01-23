@@ -1,5 +1,4 @@
 from flask import session
-from extends import error
 from flask import request, Blueprint
 
 logout_bp = Blueprint('logout', __name__, url_prefix="/userinfo/logout")

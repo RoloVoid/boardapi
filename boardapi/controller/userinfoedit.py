@@ -2,6 +2,7 @@ from flask import session
 import database
 from extends import error
 from flask import request, Blueprint
+from werkzeug.security import generate_password_hash, check_password_hash
 
 userinfoedit_bp = Blueprint('userinfoedit', __name__, url_prefix='/userinfo/modification')
 
@@ -38,7 +39,7 @@ def update_user_info():
     password = data.get('password')
     if password is not "":
         privacy_info = sessiondb.query(database.Privacy).filter(database.Privacy.username == username).first()
-        privacy_info.password = password
+        privacy_info.password = generate_password_hash(password)
         # 若要密码有修改，则提交
 
     sessiondb.commit()
