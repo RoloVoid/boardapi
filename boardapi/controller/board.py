@@ -20,5 +20,7 @@ def get_all_boards():
 
     response = json.dumps({"boards": data})
 
+    print(response)
+
     return response
 # 简单地把所有的留言板都扒出来然后展示

@@ -1,14 +1,14 @@
 function getAll(){
     var BaseURL = ''
     var getRequest = new XMLHttpRequest()
-    getRequest.open('GET',BaseURL + '/board')
+    getRequest.open('GET',BaseURL + '/boards/all')
     getRequest.send()
     getRequest.onreadystatechange = function() {
         if(getRequest.readyState == 4){
             if(getRequest.status == 200){
-                let obj = JSON.parse(getRequest.response) ;
-                let boards = obj.board ;
-                document.getElementsByTagName('form')[0].innerHTML = ""
+                let obj = JSON.parse(getRequest.responseText) ;
+                let boards = obj.boards ;
+                document.getElementsByClassName('board')[0].innerHTML = ""
                 for (var i=0 ; i < boards.length ; i++ ){
                     var nickname = boards[i].nickname;
                     var date = boards[i].date;
@@ -32,7 +32,7 @@ function getAll(){
                     a4.innerText = last ;
                     a4.className = "last";
                     a.appendChild(a4);
-                    document.getElementsByTagName("form")[0].appendChild(a);
+                    document.getElementsByClassName("board")[0].appendChild(a);
                 } 
             }
         }

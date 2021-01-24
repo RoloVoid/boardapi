@@ -97,7 +97,7 @@ function logout(){
                 var y = eval("("+x+")");
                 console.log(y["message"]);
                 document.getElementById("alert").innerHTML="";
-                window.location.href="login.html";
+                window.location.href="session";
             } else { 
                 var x = postRequest.responseText;
                 var y = eval("("+x+")");

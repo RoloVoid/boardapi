@@ -18,7 +18,7 @@ window.onload=function getLoginUser(){
 }
 function getAll(){
     var getRequest = new XMLHttpRequest()
-    getRequest.open('GET',BaseURL + '/board')
+    getRequest.open('GET',BaseURL + '/boards/all')
     getRequest.send()
     getRequest.onreadystatechange = function() {
         if(getRequest.readyState == 4){

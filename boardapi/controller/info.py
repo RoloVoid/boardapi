@@ -9,7 +9,7 @@ info_bp = Blueprint('info', __name__, url_prefix='/userinfo')
 def get_user_info():
     username = session['username']
 
-    sessiondb = database.session;
+    sessiondb = database.session
 
     temp = sessiondb.query(database.Users).filter(database.Users.username == username).first()
 
